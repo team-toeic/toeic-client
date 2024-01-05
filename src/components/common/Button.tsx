@@ -2,13 +2,13 @@ import React, { ReactNode } from "react";
 import { ButtonCSS } from "../../style/components/common/ButtonCSS";
 import { useNavigate } from "react-router-dom";
 
-export interface ButtonProps {
+export type ButtonProps = {
   children: ReactNode;
   textsize?: string;
   bgcolor?: string;
   color?: string;
   id?: string;
-}
+};
 
 function Button({
   children,
