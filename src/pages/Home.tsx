@@ -1,37 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HomeCSS } from "../style/pages/HomeCSS";
 import Button from "../components/common/Button";
 import { FaGithub } from "react-icons/fa";
+import Logo from "../components/common/Logo";
+import { motion, useTime, useTransform } from "framer-motion";
 
 function Home() {
+  const time = useTime();
+  const [rotationCount, setRotationCount] = useState(0);
+
+  const animatedRotate = useTransform(
+    time,
+    [rotationCount * 4000, (rotationCount + 1) * 4000],
+    [0, 360],
+    { clamp: false }
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotationCount((prevCount) => prevCount + 1);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <HomeCSS>
       <div className="banner">
-        <div className="logo_wrap">
-          <img
-            src={`${process.env.PUBLIC_URL}/img/toeicLogo.webp`}
-            alt="logo"
-          />
-        </div>
-        <span>
-          서비스를 설명하는 문구
-          <br />
-          어떠한 문구
-        </span>
+        <motion.div style={{ rotate: animatedRotate }} className="rotate_box" />
+        <Logo size="25em" />
       </div>
-      <div className="mascot_wrap">
-        <div>
-          <img
-            src={`${process.env.PUBLIC_URL}img/mascot.webp`}
-            alt="마스코트"
-          />
-        </div>
-      </div>
+
       <div className="btn_wrap">
-        <Button children="로그인" id="login" />
-        <Button children="회원가입" bgcolor="#A1EE81" id="register" />
+        <Button children="로그인" id="login" bgcolor="#fff" color="#7AC3CE" />
+        <Button children="회원가입" bgcolor="#7AC3CE" id="register" />
         <div className="line"></div>
-        <Button children="앱 다운받기 ↓" bgcolor="#E0C2FF" />
+        <Button children="앱 다운받기 ↓" bgcolor="#2E66DD" />
       </div>
       <div
         className="footer"
@@ -48,5 +52,4 @@ function Home() {
     </HomeCSS>
   );
 }
-
 export default Home;
