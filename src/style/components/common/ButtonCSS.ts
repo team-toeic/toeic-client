@@ -6,15 +6,15 @@ export const ButtonCSS = styled.button<ButtonProps>`
   border-radius: 5px;
   cursor: pointer;
   height: 4rem;
-  width: 7em;
+  width: 10em;
   font-weight: 500;
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.35));
+  
 
-  font-size: ${(props) => props.textsize || "1.7em"};
-  background-color: ${(props) => props.bgcolor || "#7AC3CE"};
+  font-size: ${(props) => props.textsize || "1.3em"};
+  background-color: ${(props) => props.bgcolor || "#f9c495"};
   color: ${(props) => props.color || "#fff"};  
-
   &:hover {
     background-color: ${(props) => props.color || "#fff"};
-    color: ${(props) => props.bgcolor || "#7AC3CE"};
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
+    color: ${(props) => props.bgcolor || "#f9c495"};
 `;
