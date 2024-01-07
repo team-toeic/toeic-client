@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonProps } from "../../../components/common/Button";
+import { ButtonProps } from "../../../types/ButtonPtops";
 
 export const ButtonCSS = styled.button<ButtonProps>`
   padding: 10px;
@@ -12,6 +12,7 @@ export const ButtonCSS = styled.button<ButtonProps>`
   font-size: ${(props) => props.textsize || "1.7em"};
   background-color: ${(props) => props.bgcolor || "#7AC3CE"};
   color: ${(props) => props.color || "#fff"};  
+  
   &:hover {
     background-color: ${(props) => props.color || "#fff"};
     color: ${(props) => props.bgcolor || "#7AC3CE"};

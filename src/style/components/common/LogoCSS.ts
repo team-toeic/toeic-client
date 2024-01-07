@@ -3,7 +3,7 @@ import { LogoProps } from "../../../components/common/Logo";
 
 export const LogoCSS = styled.div<LogoProps>`
   cursor: pointer;
-  width: ${(props) => props.size || "5em"};
+  width: ${(props) => props.size || "8em"};
   z-index: 2;
   img {
     width: 100%;

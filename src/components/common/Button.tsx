@@ -1,14 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { ButtonCSS } from "../../style/components/common/ButtonCSS";
 import { useNavigate } from "react-router-dom";
-
-export type ButtonProps = {
-  children: ReactNode;
-  textsize?: string;
-  bgcolor?: string;
-  color?: string;
-  id?: string;
-};
+import { ButtonProps } from "../../types/ButtonPtops";
 
 function Button({
   children,
@@ -32,7 +25,7 @@ function Button({
       bgcolor={bgcolor}
       color={color}
       id={id}
-      onClick={(e) => handlePath(e)}
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => handlePath(e)}
     />
   );
 }
