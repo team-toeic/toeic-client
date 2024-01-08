@@ -3,14 +3,7 @@ import { SubmitBtnCSS } from "../../style/components/common/SubmitBtnCSS";
 import { SubmitBtnProps } from "../../types/SubmitBtnProps";
 
 function SubmitBtn({ children, fontSize, bgColor, color }: SubmitBtnProps) {
-  return (
-    <SubmitBtnCSS
-      children={children}
-      bgColor={bgColor}
-      fontSize={fontSize}
-      color={color}
-    />
-  );
+  return <SubmitBtnCSS children={children} />;
 }
 
 export default SubmitBtn;

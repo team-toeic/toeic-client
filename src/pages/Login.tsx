@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginCSS } from "../style/pages/LoginCSS";
-import LoginForm from "../components/login/LoginForm";
-import Header from "../components/common/Header";
+import LoginForm from "../components/LoginForm";
+import Header from "../components/Header";
 
 function Login() {
   return (
