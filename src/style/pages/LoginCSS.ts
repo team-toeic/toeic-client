@@ -23,10 +23,4 @@ export const LoginCSS = styled.div`
 
     z-index: -1;
   }
-
-  > span {
-    color: red;
-    display: block;
-    font-weight: 600;
-  }
 `;

@@ -42,4 +42,11 @@ export const LoginFormCSS = styled.form`
   > button {
     margin: 20px 0px;
   }
+
+  > span {
+    color: #a10909;
+    display: block;
+    font-size: 0.8em;
+    transform: translateY(-10px);
+  }
 `;
