@@ -30,7 +30,7 @@ function RegisterForm() {
     } else {
       clearErrors("password_confirm");
     }
-  }, [watch("password"), watch("password_confirm")]);
+  }, [watch, setError, clearErrors]);
 
   return (
     <>
@@ -50,10 +50,9 @@ function RegisterForm() {
             type="password"
             {...register("password", {
               required: true,
-              maxLength: 15,
               pattern: {
                 value: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,20}$/,
-                message: "영문, 숫자, 특수문자 포함 8 ~ 20자로 입력해주세요",
+                message: "유효하지 않은 비밀번호 입니다.",
               },
             })}
           />
@@ -69,9 +68,10 @@ function RegisterForm() {
             })}
           />
         </fieldset>
-        {errors.password_confirm?.message && (
-          <span>{errors.password_confirm.message}</span>
-        )}
+        {watch("password") !== watch("password_confirm") &&
+          watch("password_confirm") && (
+            <span>{errors.password_confirm?.message}</span>
+          )}
 
         <fieldset>
           <input
