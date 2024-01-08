@@ -30,7 +30,13 @@ function RegisterForm() {
     } else {
       clearErrors("password_confirm");
     }
-  }, [watch, setError, clearErrors]);
+  }, [
+    watch,
+    setError,
+    clearErrors,
+    watch("password"),
+    watch("password_confirm"),
+  ]);
 
   return (
     <>
@@ -68,10 +74,13 @@ function RegisterForm() {
             })}
           />
         </fieldset>
-        {watch("password") !== watch("password_confirm") &&
-          watch("password_confirm") && (
-            <span>{errors.password_confirm?.message}</span>
-          )}
+        {(errors.password_confirm?.message && (
+          <span>{errors.password_confirm.message}</span>
+        )) ||
+          (watch("password") !== watch("password_confirm") &&
+            watch("password_confirm") && (
+              <span>{errors.password_confirm?.message}</span>
+            ))}
 
         <fieldset>
           <input
