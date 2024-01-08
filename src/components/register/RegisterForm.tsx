@@ -30,13 +30,8 @@ function RegisterForm() {
     } else {
       clearErrors("password_confirm");
     }
-  }, [
-    watch,
-    setError,
-    clearErrors,
-    watch("password"),
-    watch("password_confirm"),
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [watch("password"), watch("password_confirm")]);
 
   return (
     <>
