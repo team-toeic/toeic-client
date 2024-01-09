@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import Mascort from "./Mascort";
-import { HeaderCSS } from "../../style/components/common/HeaderCSS";
+import { HeaderCSS } from "../../style/components/HeaderCSS";
 
 function Header() {
   return (
