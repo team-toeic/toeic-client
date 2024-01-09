@@ -4,7 +4,7 @@ import { SubmitBtnProps } from "../../../types/SubmitBtnProps";
 //prors로 배경 색깔, 글자 색깔, 사이즈
 export const SubmitBtnCSS = styled.button<SubmitBtnProps>`
   font-size: ${(props) => props.fontSize || "2em"};
-  background: ${(props) => props.bgcolor || "#fff"};
+  background: ${(props) => props.bgColor || "#fff"};
   color: ${(props) => props.color || "#7AC3CE"};
   height: 4rem;
   width: 7em;
@@ -14,6 +14,6 @@ export const SubmitBtnCSS = styled.button<SubmitBtnProps>`
 
   &:hover {
     background-color: ${(props) => props.color || "#7AC3CE"};
-    color: ${(props) => props.bgcolor || "#fff"};
+    color: ${(props) => props.bgColor || "#fff"};
   }
 `;

@@ -3,6 +3,6 @@ import { ReactNode } from "react";
 export type SubmitBtnProps = {
   children: ReactNode;
   fontSize?: string;
-  bgcolor?: string;
+  bgColor?: string;
   color?: string;
 };

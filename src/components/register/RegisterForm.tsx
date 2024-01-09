@@ -5,8 +5,6 @@ import { RegisterData } from "../../types/RegisterData";
 import DoubleCheck from "./DoubleCheck";
 import Agreement from "./Agreement";
 import SubmitBtn from "../common/SubmitBtn";
-import axios from "axios";
-import { BASE_URL } from "../../configs";
 
 function RegisterForm() {
   const {
@@ -18,30 +16,7 @@ function RegisterForm() {
     clearErrors,
   } = useForm<RegisterData>();
 
-  console.log(BASE_URL);
-
-  const onsubmit: SubmitHandler<RegisterData> = (data) => {
-    const { username, password, password_confirm } = data;
-
-    axios
-      .post(
-        `http://15.164.154.72:8080/register`,
-        {
-          username: username,
-          password: password,
-          password_confirm: password_confirm,
-        },
-        {
-          withCredentials: true,
-        }
-      )
-      .then((res) => {
-        console.log("회원가입 통신 성공", res);
-      })
-      .catch((err) => {
-        console.log("로그인 에러", err);
-      });
-  };
+  const onsubmit: SubmitHandler<RegisterData> = (data) => console.log(data);
 
   useEffect(() => {
     if (
@@ -129,13 +104,13 @@ function RegisterForm() {
           </label>
 
           <label>
-            <input type="radio" name="agree" defaultChecked value="false" />
+            <input type="radio" name="agree" checked={true} value="false" />
             비동의
           </label>
         </fieldset>
         {errors.agree && <span>개인정보 동의서를 읽고 동의해주세요</span>}
 
-        <SubmitBtn children={"회원가입"} bgcolor="#7AC3CE" color="#fff" />
+        <SubmitBtn children={"회원가입"} bgColor="#7AC3CE" color="#fff" />
       </RegisterFormCSS>
     </>
   );

@@ -9,6 +9,3 @@ https://iamiet.tistory.com/entry/S3%EB%A1%9C-%EB%B0%B0%ED%8F%AC%ED%95%9C-React%E
 로그인, 로그아웃 form <br />
 https://githws.github.io/til/react-hook-form/ <br />
 https://react-hook-form.com/get-started#Quickstart<br />
-
-타입스크립트에서 환경변수 사용하기 <br />
-https://jurgen-94.tistory.com/114 <br />
